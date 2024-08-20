@@ -36,8 +36,6 @@
           class="col-auto my-auto mr-1 ml-3 rounded custom-border"
           id="custom-score"
         >
-          Pontuação: 000
-        </div>
       </div>
     </header>
 
@@ -55,11 +53,8 @@
             <button
               class="rounded mx-auto custom-border button noselect"
               id="score-button"
-              type="button"
-              style="margin-top: 20px"
+              style="display: none;"
             >
-              RANKING
-            </button>
           </div>
         </div>
       </div>
@@ -148,18 +143,7 @@
             Registrar no Ranking
           </button>
         </div>
-        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-          <img src="/qr-code-cadastro-oxetech.png" width="150" height="150" />
-          <div style="font-size: 24px;
-          color: #FFFFFF;
-          font-style: italic;
-          width: 303px;
-          text-align: left;
-          margin-left: 15px;
-          font-weight: bold;
-          font-family: monospace;"
-          >Acesse o QRCODE e faça parte do time de desenvolvedores de Alagoas!</div>
-        </div>
+      
       </form>
 
       <div class="row" id="score-list">
@@ -170,7 +154,6 @@
               <tr>
                 <th>#</th>
                 <th>Nome</th>
-                <th>Pontuação</th>
               </tr>
             </thead>
             <tbody id="dynamic-list" class="mx-auto underOverLine"></tbody>

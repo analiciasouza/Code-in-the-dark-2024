@@ -66,50 +66,6 @@ function safe_tags_replace(str) {
 
 var quizQuestionsArray = [
     {
-        question: "Quantas áreas técnicas existem no Mentoring Team?",
-        answers: [
-            '3 Areas',
-            '4 Areas',
-            '5 Areas',
-            '6 Areas'
-        ],
-        optrue:  '5 Areas',
-        code: "",
-    },
-    {
-        question: "O Mentoring Team organiza mensalmente o ...",
-        answers: [
-            'Mentoring Startup',
-            'Mentoring Day',
-            'Mentoring Meet',
-            'Mentoring Summit'
-
-        ],
-        optrue:  "Mentoring Meet",
-        code: "",
-    },
-    {
-        question: "Atualmente o Mentoring Team conta com uma equipe composta por ...",
-        answers: [
-            "10 Pessoas",
-            "12 Pessoas",
-            "11 Pessoas",
-            "13 Pessoas"
-        ],
-        optrue: "12 Pessoas",
-        code: ''
-    },{
-        question: "Qual área não faz parte do Mentoring Team?",
-        answers: [
-            "Vendas",
-            "Contabilidade",
-            "Marketing",
-            "Tecnologia"
-        ],
-        optrue: "Contabilidade",
-        code: "",
-    },
-    {
         question: "Quanto custa participar do Mentoring Team?",
         answers: [
             "R$ 100 Mensais",
@@ -130,99 +86,6 @@ var quizQuestionsArray = [
         ],
         optrue: "Negócio inovador, replicável e escalável",
         code:"",
-    },
-    {
-        question: "O que é uma Startup Unicórnio?",
-        answers: [
-            "Startup com sede em paises nórdicos",
-            "Startup fundada por apenas uma pessoa",
-            "Startup que nunca obteve lucro",
-            "Startup avaliada em mais de 1 bilhão de dólares"
-        ],
-        optrue: "Startup avaliada em mais de 1 bilhão de dólares",
-        code:"",
-    },
-    {
-        question: "O que significa o termo 'Pivotar' em uma Startup?",
-        answers: [
-            "Manter características do negócio/produto",
-            "Alterar a direção do modelo de negócio/produto",
-            "Mudar aspectos do branding da marca",
-            "Fazer ajustes operacionais rotineiros",
-        ],
-        optrue: "Alterar a direção do modelo de negócio/produto",
-        code:"",
-    },
-    {
-        question: "Qual o papel de uma mentoria?",
-        answers: [
-            "Fornecer orientações e suporte técnico para os fundadores",
-            "Gerenciar as operações diárias da empresa",
-            "Fazer a publicidade da empresa",
-            "Fornecer financiamento"
-        ],
-        optrue: "Fornecer orientações e suporte técnico para os fundadores",
-        code:"",
-    },{
-        question: "Qual dessas NÃO é uma forma de participar do Mentoring Team?",
-        answers: [
-            "Ser aprovado nos editais da SECTI/FAPEAL",
-            "Ter Sala no Centro de Inovações",
-            "Ser associada da ASESSPRO",
-            "Seleção Online"
-        ],
-        optrue: "Seleção Online",
-        code:""
-    },{
-        question: "O que significa MVP em português?",
-        answers: [
-            "Produto Máximo Viável",
-            "Produto Mínimo Viável",
-            "Produto Melhorado Viável",
-            "Produto Valorizado por Mercado"
-        ],
-        optrue: "Produto Mínimo Viável",
-        code:""
-    },{
-        question: "Quais instituições criaram o Mentoring Team?",
-        answers: [
-            "SECTI/FAPEAL",
-            "MCTI/Finep",
-            "CAPES/ABDI",
-            "CNPQ"
-        ],
-        optrue: "SECTI/FAPEAL",
-        code:""
-    },{
-        question:"Qual das opções é característica comum de uma startup?",
-        answers: [
-            "Alto grau de incerteza",
-            "Baixo grau de inovação",
-            "Hierarquia rígida",
-            "Produtos tradicionais"
-        ],
-        optrue: "Alto grau de incerteza",
-        code:""
-    },{
-        question: "O que é o 'Pitch' de uma STARTUP?",
-        answers: [
-            "Um plano de negócios completo",
-            "Uma breve apresentação para investidores",
-            "Um contrato de trabalho",
-            "Um tipo de financiamento"
-        ],
-        optrue: "Uma breve apresentação para investidores",
-        code:""
-    },{
-        question: "O que é um 'Anjo' no contexto de uma startup?",
-        answers: [
-            "Um tipo de investidor",
-            "Um tipo de funcionário",
-            "Um tipo de produto",
-            "Um tipo de software"
-        ],
-        optrue: "Um tipo de investidor",
-        code:""
     }
 ];
 
@@ -290,7 +153,7 @@ function startQuiz(event) {
     currentQuestion = 0; // reset to start of quiz
     questionDisplay.hidden = false; // show Q&A
     // display score and timer
-    scoreDisplay.textContent = "Pontuação: 00" + score;
+    // scoreDisplay.textContent = "Pontuação: 00" + score;
     scoreDisplay.hidden = false;
     timerDisplay.textContent = "Tempo: " + currentTime;
     timerDisplay.hidden = false; // could be put in function instead
@@ -387,35 +250,35 @@ function verifyResponse(event) {
         thisAnswer.textContent === quizQuestionsArray[currentQuestion].optrue
     ) {
         // se acertar em menos de 3 segundos então obterá menos pontuação
-        if (questionTimeLeft > 17) {
+        if (questionTimeLeft > 18) {
             multiplicadorDePontos = 1;
         }
 
         // disabled double click
-        thisAnswer.setAttribute(
-            // change style to green to indicate correct choice
-            "style",
-            "background-color: rgb(104, 226, 56); color: white; box-shadow: 0px 5px 2px rgb(104, 226, 56);pointer-events:none"
-        );
+        // thisAnswer.setAttribute(
+        //     // change style to green to indicate correct choice
+        //     "style",
+        //     "background-color: rgb(104, 226, 56); color: white; box-shadow: 0px 5px 2px rgb(104, 226, 56);pointer-events:none"
+        // );
         score = score + questionTimeLeft * multiplicadorDePontos; // get 377 points
         currentQuestion++; // go to next question index
         // update score, flash green
         scoreDisplay.textContent = "Pontuação: " + score;
-        scoreDisplay.setAttribute(
-            "style",
-            "box-shadow: 0px 5px 3px rgb(104, 226, 56)"
-        );
+        // scoreDisplay.setAttribute(
+        //     "style",
+        //     "box-shadow: 0px 5px 3px rgb(104, 226, 56)"
+        // );
         // this function sets a delay, so we can see if you got it right or wrong
         // then render the next question after the short delay
         timeOutId = window.setTimeout(renderQuestion, 600);
     } else {
         // wrong choice!
         //  disabled double click
-        thisAnswer.setAttribute(
-            // style this answer with red to indicate incorrect response
-            "style",
-            "background-color: red; color: white; box-shadow: 0px 5px 2px red;pointer-events:none"
-        );
+        // thisAnswer.setAttribute(
+        //     // style this answer with red to indicate incorrect response
+        //     "style",
+        //     "background-color: red; color: white; box-shadow: 0px 5px 2px red;pointer-events:none"
+        // );
         // flash timer display with yellow to indicated penalty
         timerDisplay.setAttribute("style", "box-shadow: 0px 5px 3px yellow");
         currentTime = currentTime - 14; // penalty, you got it wrong!
@@ -450,10 +313,31 @@ function gameOver() {
     gameOverScore.textContent = "FIM do desafio! Você conseguiu " + score + " pontos!";
 }
 
-// this function is called to store a new entry
+//This function stores the score in csv format
 function storeScores() {
-    localStorage.setItem("scoresList", btoa(JSON.stringify(scoreList)).replace("F", "GGG"));
+    // store the score list array in local storage
+    localStorage.setItem("scoresList", btoa(JSON.stringify(scoreList).replaceAll("F", "GGG")));
+    // render the score list
+    renderScoreList();
 }
+
+// Post to an API to save Identifier and score
+function postToApi(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://api.inovacaoal.com.br/mentoringteam/score", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+        }
+    };
+    var data = JSON.stringify({"identifier": "teste", "score": score});
+    xhr.send(data);
+    //The database must be created with the following structure
+    // identifier: string
+    // score: number
+}
+
 
 // this function renders the score list
 function renderScoreList() {
