@@ -318,26 +318,34 @@ function storeScores() {
     // store the score list array in local storage
     localStorage.setItem("scoresList", btoa(JSON.stringify(scoreList).replaceAll("F", "GGG")));
     // render the score list
-    renderScoreList();
 }
 
-// Post to an API to save Identifier and score
-function postToApi(){
+function postToApi(usuario,pontuacao) {    
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://api.inovacaoal.com.br/mentoringteam/score", true);
+    xhr.open("POST", "http://localhost:4321/ranking", true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log(xhr.responseText);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log("Score enviado com sucesso!");
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    console.log("Response from API:", response);
+                    // Handle the response data here
+                } catch (e) {
+                    console.error("Failed to parse response:", e);
+                }
+            } else {
+                console.error("Failed to send score. Status:", xhr.status);
+            }
         }
     };
-    var data = JSON.stringify({"identifier": "teste", "score": score});
-    xhr.send(data);
-    //The database must be created with the following structure
-    // identifier: string
-    // score: number
+    req = {
+        "identifier": usuario,
+        "score": pontuacao
+    };
+    xhr.send(JSON.stringify(req))
 }
-
 
 // this function renders the score list
 function renderScoreList() {
@@ -350,11 +358,9 @@ function renderScoreList() {
             if (a.highScore > b.highScore) {
                 return -1
             }
-
             if (a.highScore === b.highScore) {
                 return 0
             }
-
             if (a.highScore < b.highScore) {
                 return 1
             }
@@ -401,20 +407,19 @@ function submitScores(event) {
         return;
     }
 
-    user = user.toLowerCase();
+    user = user.toLowerCase(); // convert to lowercase
 
     const arr = user.split(" ");
     for (var i = 0; i < arr.length; i++) {
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-
-    }
-    user = arr.join(" ");
+    } // capitalize first letter of each word
+    user = arr.join(" "); // join the array back into a string
 
     // create a new object containing user and score pair
     var userScore = {
         name: user,
         highScore: score,
-    };
+    }; // 
 
     let user_added = true;
     for (var i = 0; i < scoreList.length; i++) {
@@ -436,7 +441,11 @@ function submitScores(event) {
         letsGoAgain.hidden = false;
         renderScoreList();
     }
-
+    if (user_added == true){
+        postToApi(user,score);
+    } else{
+        console.log("Usuário já adicionado!");
+    }
 }
 // this function erases local storage, score list,
 // and clears global array variable

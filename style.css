@@ -103,7 +103,7 @@ body {
 #game-over {
   left: 16.665%;
   width: 66.66%;
-  height: flex;
+  height: 40%;
   display: block;
   text-align: center;
   z-index: 2;
