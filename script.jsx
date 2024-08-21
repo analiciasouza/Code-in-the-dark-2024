@@ -432,7 +432,6 @@ function submitScores(event) {
 
     if (user_added) {
         // push new user-score pair into score list array
-        scoreList.push(userScore);
         // now store, then display score list
         storeScores();
         userNameForm.hidden = true;
