@@ -118,7 +118,7 @@ function init() {
     }
 
     // prepare the score list to show later
-    renderScoreList();
+    // renderScoreList();
     // we are at start of the quiz
     currentQuestion = 0;
 }
@@ -137,7 +137,7 @@ function showScore(event) {
     gameOverSplash.hidden = true;
     letsGoAgain.hidden = false;
     clearHighScores.hidden = false;
-    renderScoreList();
+    // renderScoreList();
 }
 
 // start or restarting quiz; reset all visible sections and variables
@@ -249,18 +249,13 @@ function verifyResponse(event) {
         // correct choice!
         thisAnswer.textContent === quizQuestionsArray[currentQuestion].optrue
     ) {
-        // se acertar em menos de 3 segundos então obterá menos pontuação
-        if (questionTimeLeft > 18) {
-            multiplicadorDePontos = 1;
-        }
-
         // disabled double click
         // thisAnswer.setAttribute(
         //     // change style to green to indicate correct choice
         //     "style",
         //     "background-color: rgb(104, 226, 56); color: white; box-shadow: 0px 5px 2px rgb(104, 226, 56);pointer-events:none"
         // );
-        score = score + questionTimeLeft * multiplicadorDePontos; // get 377 points
+        score += 300
         currentQuestion++; // go to next question index
         // update score, flash green
         scoreDisplay.textContent = "Pontuação: " + score;
@@ -438,7 +433,7 @@ function submitScores(event) {
         gameOverSplash.hidden = true;
         HighScoreList.hidden = false;
         letsGoAgain.hidden = false;
-        renderScoreList();
+        // renderScoreList();
     }
     if (user_added == true){
         postToApi(user,score);
@@ -446,7 +441,8 @@ function submitScores(event) {
         console.log("Usuário já adicionado!");
     }
 }
-// this function erases local storage, score list,
+// this function erases local storage, score list,dos horários - brotaram duas pessoas pra chamar a atenção dos funcionários. Como que essa obra ninguém fiscaliza?
+
 // and clears global array variable
 function clearScores(event) {
     // need to clear local storage too
