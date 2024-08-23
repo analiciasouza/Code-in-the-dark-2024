@@ -86,6 +86,56 @@ var quizQuestionsArray = [
         ],
         optrue: "Negócio inovador, replicável e escalável",
         code:"",
+    },{
+        question: "O que é um pitch?",
+        answers: [
+            "Um tipo de apresentação de produtos",
+            "Um tipo de apresentação de serviços",
+            "Um tipo de apresentação de ideias",
+            "Um tipo de apresentação de negócios"
+        ],
+        optrue: "Um tipo de apresentação de negócios",
+        code:"",
+    },{
+        question: "O que é um hackathon?",
+        answers: [
+            "Uma maratona de programação",
+            "Uma maratona de vendas",
+            "Uma maratona de negócios",
+            "Uma maratona de ideias"
+        ],
+        optrue: "Uma maratona de programação",
+        code:"",
+    },{
+        question: "O que é um MVP?",
+        answers: [
+            "Mínimo Varejo Produto",
+            "Mínimo Varejo Padrão",
+            "Mínimo Valor Produto",
+            "Mínimo Produto Viável"
+        ],
+        optrue: "Mínimo Produto Viável",
+        code:"",
+    },{
+        question: "O que é um unicórnio?",
+        answers: [
+            "Um animal místico",
+            "Uma empresa com valor de mercado acima de 1 bilhão de dólares",
+            "Uma empresa com valor de mercado acima de 1 milhão de dólares",
+            "Uma empresa com valor de mercado acima de 1 trilhão de dólares"
+        ],
+        optrue: "Uma empresa com valor de mercado acima de 1 bilhão de dólares",
+        code:"",
+    },{
+        question: "O que é um pitch deck?",
+        answers: [
+            "Uma apresentação de produtos",
+            "Uma apresentação de serviços",
+            "Uma apresentação de ideias",
+            "Uma apresentação de negócios"
+        ],
+        optrue: "Uma apresentação de negócios",
+        code:"",
     }
 ];
 
@@ -315,9 +365,9 @@ function storeScores() {
     // render the score list
 }
 
-function postToApi(usuario,pontuacao) {    
+function postToApi(usuario,pontuacao) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:4321/ranking", true);
+    xhr.open("POST", "http://localhost:4321/ranking/roga", true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
@@ -435,6 +485,7 @@ function submitScores(event) {
         letsGoAgain.hidden = false;
         // renderScoreList();
     }
+    
     if (user_added == true){
         postToApi(user,score);
     } else{
