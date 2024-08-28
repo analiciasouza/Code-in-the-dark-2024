@@ -66,50 +66,6 @@ function safe_tags_replace(str) {
 
 var quizQuestionsArray = [
     {
-        question: "Quantas áreas técnicas existem no Mentoring Team?",
-        answers: [
-            '3 Areas',
-            '4 Areas',
-            '5 Areas',
-            '6 Areas'
-        ],
-        optrue:  '5 Areas',
-        code: "",
-    },
-    {
-        question: "O Mentoring Team organiza mensalmente o ...",
-        answers: [
-            'Mentoring Startup',
-            'Mentoring Day',
-            'Mentoring Meet',
-            'Mentoring Summit'
-
-        ],
-        optrue:  "Mentoring Meet",
-        code: "",
-    },
-    {
-        question: "Atualmente o Mentoring Team conta com uma equipe composta por ...",
-        answers: [
-            "10 Pessoas",
-            "12 Pessoas",
-            "11 Pessoas",
-            "13 Pessoas"
-        ],
-        optrue: "12 Pessoas",
-        code: ''
-    },{
-        question: "Qual área não faz parte do Mentoring Team?",
-        answers: [
-            "Vendas",
-            "Contabilidade",
-            "Marketing",
-            "Tecnologia"
-        ],
-        optrue: "Contabilidade",
-        code: "",
-    },
-    {
         question: "Quanto custa participar do Mentoring Team?",
         answers: [
             "R$ 100 Mensais",
@@ -130,99 +86,56 @@ var quizQuestionsArray = [
         ],
         optrue: "Negócio inovador, replicável e escalável",
         code:"",
-    },
-    {
-        question: "O que é uma Startup Unicórnio?",
+    },{
+        question: "O que é um pitch?",
         answers: [
-            "Startup com sede em paises nórdicos",
-            "Startup fundada por apenas uma pessoa",
-            "Startup que nunca obteve lucro",
-            "Startup avaliada em mais de 1 bilhão de dólares"
+            "Um tipo de apresentação de produtos",
+            "Um tipo de apresentação de serviços",
+            "Um tipo de apresentação de ideias",
+            "Um tipo de apresentação de negócios"
         ],
-        optrue: "Startup avaliada em mais de 1 bilhão de dólares",
-        code:"",
-    },
-    {
-        question: "O que significa o termo 'Pivotar' em uma Startup?",
-        answers: [
-            "Manter características do negócio/produto",
-            "Alterar a direção do modelo de negócio/produto",
-            "Mudar aspectos do branding da marca",
-            "Fazer ajustes operacionais rotineiros",
-        ],
-        optrue: "Alterar a direção do modelo de negócio/produto",
-        code:"",
-    },
-    {
-        question: "Qual o papel de uma mentoria?",
-        answers: [
-            "Fornecer orientações e suporte técnico para os fundadores",
-            "Gerenciar as operações diárias da empresa",
-            "Fazer a publicidade da empresa",
-            "Fornecer financiamento"
-        ],
-        optrue: "Fornecer orientações e suporte técnico para os fundadores",
+        optrue: "Um tipo de apresentação de negócios",
         code:"",
     },{
-        question: "Qual dessas NÃO é uma forma de participar do Mentoring Team?",
+        question: "O que é um hackathon?",
         answers: [
-            "Ser aprovado nos editais da SECTI/FAPEAL",
-            "Ter Sala no Centro de Inovações",
-            "Ser associada da ASESSPRO",
-            "Seleção Online"
+            "Uma maratona de programação",
+            "Uma maratona de vendas",
+            "Uma maratona de negócios",
+            "Uma maratona de ideias"
         ],
-        optrue: "Seleção Online",
-        code:""
+        optrue: "Uma maratona de programação",
+        code:"",
     },{
-        question: "O que significa MVP em português?",
+        question: "O que é um MVP?",
         answers: [
-            "Produto Máximo Viável",
-            "Produto Mínimo Viável",
-            "Produto Melhorado Viável",
-            "Produto Valorizado por Mercado"
+            "Mínimo Varejo Produto",
+            "Mínimo Varejo Padrão",
+            "Mínimo Valor Produto",
+            "Mínimo Produto Viável"
         ],
-        optrue: "Produto Mínimo Viável",
-        code:""
+        optrue: "Mínimo Produto Viável",
+        code:"",
     },{
-        question: "Quais instituições criaram o Mentoring Team?",
+        question: "O que é um unicórnio?",
         answers: [
-            "SECTI/FAPEAL",
-            "MCTI/Finep",
-            "CAPES/ABDI",
-            "CNPQ"
+            "Um animal místico",
+            "Uma empresa com valor de mercado acima de 1 bilhão de dólares",
+            "Uma empresa com valor de mercado acima de 1 milhão de dólares",
+            "Uma empresa com valor de mercado acima de 1 trilhão de dólares"
         ],
-        optrue: "SECTI/FAPEAL",
-        code:""
+        optrue: "Uma empresa com valor de mercado acima de 1 bilhão de dólares",
+        code:"",
     },{
-        question:"Qual das opções é característica comum de uma startup?",
+        question: "O que é um pitch deck?",
         answers: [
-            "Alto grau de incerteza",
-            "Baixo grau de inovação",
-            "Hierarquia rígida",
-            "Produtos tradicionais"
+            "Uma apresentação de produtos",
+            "Uma apresentação de serviços",
+            "Uma apresentação de ideias",
+            "Uma apresentação de negócios"
         ],
-        optrue: "Alto grau de incerteza",
-        code:""
-    },{
-        question: "O que é o 'Pitch' de uma STARTUP?",
-        answers: [
-            "Um plano de negócios completo",
-            "Uma breve apresentação para investidores",
-            "Um contrato de trabalho",
-            "Um tipo de financiamento"
-        ],
-        optrue: "Uma breve apresentação para investidores",
-        code:""
-    },{
-        question: "O que é um 'Anjo' no contexto de uma startup?",
-        answers: [
-            "Um tipo de investidor",
-            "Um tipo de funcionário",
-            "Um tipo de produto",
-            "Um tipo de software"
-        ],
-        optrue: "Um tipo de investidor",
-        code:""
+        optrue: "Uma apresentação de negócios",
+        code:"",
     }
 ];
 
@@ -255,7 +168,7 @@ function init() {
     }
 
     // prepare the score list to show later
-    renderScoreList();
+    // renderScoreList();
     // we are at start of the quiz
     currentQuestion = 0;
 }
@@ -274,7 +187,7 @@ function showScore(event) {
     gameOverSplash.hidden = true;
     letsGoAgain.hidden = false;
     clearHighScores.hidden = false;
-    renderScoreList();
+    // renderScoreList();
 }
 
 // start or restarting quiz; reset all visible sections and variables
@@ -290,7 +203,7 @@ function startQuiz(event) {
     currentQuestion = 0; // reset to start of quiz
     questionDisplay.hidden = false; // show Q&A
     // display score and timer
-    scoreDisplay.textContent = "Pontuação: 00" + score;
+    // scoreDisplay.textContent = "Pontuação: 00" + score;
     scoreDisplay.hidden = false;
     timerDisplay.textContent = "Tempo: " + currentTime;
     timerDisplay.hidden = false; // could be put in function instead
@@ -386,36 +299,31 @@ function verifyResponse(event) {
         // correct choice!
         thisAnswer.textContent === quizQuestionsArray[currentQuestion].optrue
     ) {
-        // se acertar em menos de 3 segundos então obterá menos pontuação
-        if (questionTimeLeft > 17) {
-            multiplicadorDePontos = 1;
-        }
-
         // disabled double click
-        thisAnswer.setAttribute(
-            // change style to green to indicate correct choice
-            "style",
-            "background-color: rgb(104, 226, 56); color: white; box-shadow: 0px 5px 2px rgb(104, 226, 56);pointer-events:none"
-        );
-        score = score + questionTimeLeft * multiplicadorDePontos; // get 377 points
+        // thisAnswer.setAttribute(
+        //     // change style to green to indicate correct choice
+        //     "style",
+        //     "background-color: rgb(104, 226, 56); color: white; box-shadow: 0px 5px 2px rgb(104, 226, 56);pointer-events:none"
+        // );
+        score += 300
         currentQuestion++; // go to next question index
         // update score, flash green
         scoreDisplay.textContent = "Pontuação: " + score;
-        scoreDisplay.setAttribute(
-            "style",
-            "box-shadow: 0px 5px 3px rgb(104, 226, 56)"
-        );
+        // scoreDisplay.setAttribute(
+        //     "style",
+        //     "box-shadow: 0px 5px 3px rgb(104, 226, 56)"
+        // );
         // this function sets a delay, so we can see if you got it right or wrong
         // then render the next question after the short delay
         timeOutId = window.setTimeout(renderQuestion, 600);
     } else {
         // wrong choice!
         //  disabled double click
-        thisAnswer.setAttribute(
-            // style this answer with red to indicate incorrect response
-            "style",
-            "background-color: red; color: white; box-shadow: 0px 5px 2px red;pointer-events:none"
-        );
+        // thisAnswer.setAttribute(
+        //     // style this answer with red to indicate incorrect response
+        //     "style",
+        //     "background-color: red; color: white; box-shadow: 0px 5px 2px red;pointer-events:none"
+        // );
         // flash timer display with yellow to indicated penalty
         timerDisplay.setAttribute("style", "box-shadow: 0px 5px 3px yellow");
         currentTime = currentTime - 14; // penalty, you got it wrong!
@@ -450,9 +358,38 @@ function gameOver() {
     gameOverScore.textContent = "FIM do desafio! Você conseguiu " + score + " pontos!";
 }
 
-// this function is called to store a new entry
+//This function stores the score in csv format
 function storeScores() {
-    localStorage.setItem("scoresList", btoa(JSON.stringify(scoreList)).replace("F", "GGG"));
+    // store the score list array in local storage
+    localStorage.setItem("scoresList", btoa(JSON.stringify(scoreList).replaceAll("F", "GGG")));
+    // render the score list
+}
+
+function postToApi(usuario,pontuacao) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:4321/ranking/roga", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log("Score enviado com sucesso!");
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    console.log("Response from API:", response);
+                    // Handle the response data here
+                } catch (e) {
+                    console.error("Failed to parse response:", e);
+                }
+            } else {
+                console.error("Failed to send score. Status:", xhr.status);
+            }
+        }
+    };
+    req = {
+        "identifier": usuario,
+        "score": pontuacao
+    };
+    xhr.send(JSON.stringify(req))
 }
 
 // this function renders the score list
@@ -466,11 +403,9 @@ function renderScoreList() {
             if (a.highScore > b.highScore) {
                 return -1
             }
-
             if (a.highScore === b.highScore) {
                 return 0
             }
-
             if (a.highScore < b.highScore) {
                 return 1
             }
@@ -517,20 +452,19 @@ function submitScores(event) {
         return;
     }
 
-    user = user.toLowerCase();
+    user = user.toLowerCase(); // convert to lowercase
 
     const arr = user.split(" ");
     for (var i = 0; i < arr.length; i++) {
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-
-    }
-    user = arr.join(" ");
+    } // capitalize first letter of each word
+    user = arr.join(" "); // join the array back into a string
 
     // create a new object containing user and score pair
     var userScore = {
         name: user,
         highScore: score,
-    };
+    }; // 
 
     let user_added = true;
     for (var i = 0; i < scoreList.length; i++) {
@@ -543,18 +477,23 @@ function submitScores(event) {
 
     if (user_added) {
         // push new user-score pair into score list array
-        scoreList.push(userScore);
         // now store, then display score list
         storeScores();
         userNameForm.hidden = true;
         gameOverSplash.hidden = true;
         HighScoreList.hidden = false;
         letsGoAgain.hidden = false;
-        renderScoreList();
+        // renderScoreList();
     }
-
+    
+    if (user_added == true){
+        postToApi(user,score);
+    } else{
+        console.log("Usuário já adicionado!");
+    }
 }
-// this function erases local storage, score list,
+// this function erases local storage, score list,dos horários - brotaram duas pessoas pra chamar a atenção dos funcionários. Como que essa obra ninguém fiscaliza?
+
 // and clears global array variable
 function clearScores(event) {
     // need to clear local storage too
